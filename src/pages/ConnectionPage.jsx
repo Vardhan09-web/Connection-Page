@@ -6,9 +6,8 @@ import { FiUpload } from "react-icons/fi";
 import logo from "../assets/images/Eduwedo_V00R04.svg";
 
 const ConnectionPage = () => {
-  // Handle sharing the website link 
+  // Handle sharing the website link
   const handleShareClick = async () => {
-
     if (navigator.share) {
       try {
         await navigator.share({
@@ -25,6 +24,44 @@ const ConnectionPage = () => {
     }
   };
 
+  // Links arrays 
+  const links = [
+    {
+      label: "Follow us on LinkedIn",
+      href: "#",
+      icon: <FaLinkedin />,
+      borderColor: "border-blue-700",
+      hoverBg: "hover:bg-blue-700",
+    },
+    {
+      label: "Follow us on Instagram",
+      href: "#",
+      icon: <FaInstagram />,
+      borderColor: "border-transparent",
+      hoverBg: "hover:bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500",
+    },
+    {
+      label: "Follow us on Twitter",
+      href: "#",
+      icon: <FaTwitter />,
+      borderColor: "border-blue-400",
+      hoverBg: "hover:bg-blue-400",
+    },
+    {
+      label: "Subscribe us on Youtube",
+      href: "#",
+      icon: <FaYoutube />,
+      borderColor: "border-red-600",
+      hoverBg: "hover:bg-red-600",
+    },
+    {
+      label: "Visit our Website",
+      href: "#",
+      icon: <FaGlobe />,
+      borderColor: "border-transparent",
+      hoverBg: "hover:bg-gradient-to-r from-orange-500 via-blue-500 to-orange-500",
+    },
+  ];
 
   return (
     <div
@@ -67,38 +104,13 @@ const ConnectionPage = () => {
 
       {/* Links Section */}
       <div className="w-full max-w-md space-y-4 mt-8">
-        {[
-          {
-            label: "Follow us on LinkedIn",
-            href: "#",
-            icon: <FaLinkedin />,
-          },
-          {
-            label: "Follow us on Instagram",
-            href: "#",
-            icon: <FaInstagram />,
-          },
-          {
-            label: "Follow us on Twitter",
-            href: "#",
-            icon: <FaTwitter />,
-          },
-          {
-            label: "Subscribe us on Youtube",
-            href: "#",
-            icon: <FaYoutube />,
-          },
-          {
-            label: "Visit our Website",
-            href: "#",
-            icon: <FaGlobe />,
-          },
-        ].map((link, index) => (
+        {links.map((link, index) => (
           <a
             key={index}
             href={link.href}
-            className="flex items-center bg-gray-800 text-white font-medium py-3 px-4 
-              rounded-lg transition border-2 border-gray-200 hover:text-black hover:bg-gray-700"
+            className={`flex items-center bg-gray-800 text-white font-medium py-3 px-4
+              rounded-lg transition border-2 ${link.borderColor} 
+              ${link.hoverBg} hover:text-black`}
           >
             <div className="text-xl mr-4">{link.icon}</div>
             <span>{link.label}</span>
@@ -110,3 +122,4 @@ const ConnectionPage = () => {
 };
 
 export default ConnectionPage;
+
