@@ -1,6 +1,5 @@
 import React from "react";
 import Meteors from "../components/Meteors";
-import { TypingAnimation } from "../components/TypingAnimation";
 import { FaLinkedin, FaInstagram, FaTwitter, FaYoutube, FaGlobe } from "react-icons/fa";
 import { FiUpload } from "react-icons/fi";
 import logo from "../assets/images/Eduwedo_V00R04.svg";
@@ -28,14 +27,14 @@ const ConnectionPage = () => {
   const links = [
     {
       label: "Follow us on LinkedIn",
-      href: "#",
+      href: "https://www.linkedin.com/company/eduwedo/",
       icon: <FaLinkedin />,
       borderColor: "border-blue-700",
       hoverBg: "hover:bg-blue-700",
     },
     {
       label: "Follow us on Instagram",
-      href: "#",
+      href: "https://www.instagram.com/eduwedo.in/",
       icon: <FaInstagram />,
       borderColor: "border-transparent",
       hoverBg: "hover:bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500",
@@ -56,10 +55,10 @@ const ConnectionPage = () => {
     },
     {
       label: "Visit our Website",
-      href: "#",
+      href: "https://www.eduwedo.in",
       icon: <FaGlobe />,
-      borderColor: "border-blue-500",
-      hoverBg: "hover:bg-blue-500",
+      borderColor: "border-[#29AEFC]", 
+      hoverBg: "hover:bg-[#29AEFC]",
     },
   ];
 
@@ -95,11 +94,10 @@ const ConnectionPage = () => {
           </div>
         </div>
         <h1 className="text-xl font-bold mt-4 text-black">@eduwedo.in</h1>
-        <TypingAnimation
-          text="Empowering Minds, Envisioning Futures"
-          duration={100}
-          className="text-sm text-gray-600 m-0"
-        />
+        {/* Static Text */}
+        <p className="text-sm text-gray-600 m-0">
+          Empowering Minds, Envisioning Futures
+        </p>
       </div>
 
       {/* Links Section */}
@@ -122,4 +120,3 @@ const ConnectionPage = () => {
 };
 
 export default ConnectionPage;
-
