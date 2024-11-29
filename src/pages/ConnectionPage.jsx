@@ -58,8 +58,8 @@ const ConnectionPage = () => {
       label: "Visit our Website",
       href: "#",
       icon: <FaGlobe />,
-      borderColor: "border-transparent",
-      hoverBg: "hover:bg-gradient-to-r from-orange-500 via-blue-500 to-orange-500",
+      borderColor: "border-blue-500",
+      hoverBg: "hover:bg-blue-500",
     },
   ];
 
